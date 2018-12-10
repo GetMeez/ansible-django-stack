@@ -8,6 +8,7 @@
   vars:
     update_apt_cache: yes
   vars_files:
+    - env_vars/vault.yml
     - env_vars/base.yml
     - env_vars/vagrant.yml
 

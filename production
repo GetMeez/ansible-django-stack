@@ -1,0 +1,8 @@
+[all:vars]
+env=production
+
+[dbservers]
+production.getmeez.com
+
+[webservers]
+production.getmeez.com nginx_use_letsencrypt=true

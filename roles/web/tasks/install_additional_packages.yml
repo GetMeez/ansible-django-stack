@@ -12,4 +12,7 @@
     - libcurl4-gnutls-dev
     - gnutls-dev
     - libpq-dev
+    - libjpeg8-dev
     - "{{ virtualenv_python_version + '-dev' }}"
+    - silversearcher-ag
+    - tree
