@@ -1,13 +1,19 @@
 Meez-specific configuration
 ====================
 
+### Backend setup
+
 **Install requirements:** `pip install -r requirements.txt`
 
-**Deploy webserver to production:** `. bin/deploy-meez.sh`
+**Deploy backend webserver to production:** `. bin/deploy-meez.sh`
 
-**(Re)configure production server:** `. bin/setup-meez.sh`
+**(Re)configure backend production webserver:** `. bin/setup-meez.sh`
 
 The playbook will ask for sudo and vault passwords which can be found in the GetMeez Server Administration note.
+
+### Frontend setup
+
+The frontend is located in the `/webapps/meez/web/` directory. To deploy the frontend (for now), simply scp the files to this directory and run `service nginx restart` as sudo user (`sudo -i` after ssh'ing to the machine).
 
 ansible-django-stack
 ====================
