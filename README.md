@@ -1,3 +1,13 @@
+Meez-specific configuration
+====================
+
+**Install requirements:** `pip install -r requirements.txt`
+
+**Deploy webserver to production:** `. bin/deploy-meez.sh`
+
+**(Re)configure production server:** `. bin/setup-meez.sh`
+
+The playbook will ask for sudo and vault passwords which can be found in the GetMeez Server Administration note.
 
 ansible-django-stack
 ====================
