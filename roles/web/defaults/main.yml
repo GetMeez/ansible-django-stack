@@ -35,6 +35,6 @@ django_environment:
   STATIC_ROOT: "{{ nginx_static_dir }}"
   DATABASE_NAME: "{{ db_name }}"
   DATABASE_USER: "{{ db_user }}"
-  DATABASE_PASSWORD: "{{ db_password }}"
+  DATABASE_PASSWORD: '{{ db_password }}'
   DATABASE_HOST: "{{ db_host }}"
   BROKER_URL: "{{ broker_url }}"

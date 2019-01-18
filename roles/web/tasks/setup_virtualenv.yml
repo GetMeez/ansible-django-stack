@@ -55,6 +55,11 @@
         mode=0664
         force=no
 
+- name: Debugger
+  debug:
+    msg: "The db_password is {{ db_password }} and db_host is {{ db_host }}"
+  tags: debug
+
 - name: Create the virtualenv postactivate script to set environment variables
   template: src=virtualenv_postactivate.j2
             dest={{ virtualenv_path }}/bin/postactivate

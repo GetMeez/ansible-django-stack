@@ -2,13 +2,6 @@
 
 git_repo: git@github.com:GetMeez/meez.git
 
-server_user_password: "{{ vault_server_user_password }}"
-
-db_user: "{{ vault_db_user }}"
-db_name: "{{ vault_db_name }}"
-db_password: "{{ vault_db_password }}"
-db_host: "{{ vault_db_host }}"
-
 # Set this flag to true so you can checkout code from a private git repository
 # which is setup with an SSH key.
 ssh_forward_agent: true

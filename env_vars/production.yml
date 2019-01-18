@@ -2,13 +2,15 @@
 
 # Git settings.
 setup_git_repo: yes
-git_branch: ian_production
+git_branch: master
+server_user_password: "{{ vault_production_server_user_password }}"
 
 
 # Database settings.
-db_user: "{{ application_name }}"
-db_name: "{{ application_name }}"
-db_password: "{{ vault_db_password }}"
+db_user: "{{ vault_production_db_user }}"
+db_name: "{{ vault_production_db_name }}"
+db_password: "{{ vault_production_db_password }}"
+db_host: "{{ vault_production_db_host }}"
 
 
 # Gunicorn settings. For the number of workers, a good rule to follow is
