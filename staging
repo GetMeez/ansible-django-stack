@@ -1,0 +1,8 @@
+[all:vars]
+env=staging
+
+[dbservers]
+staging.getmeez.com
+
+[webservers]
+staging.getmeez.com nginx_use_letsencrypt=true

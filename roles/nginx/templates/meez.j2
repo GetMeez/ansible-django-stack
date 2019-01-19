@@ -99,8 +99,8 @@ server {
         expires 1y;
         add_header Cache-Control "public";
     }
-
-    location ~* .(?:json|html?) {
+    
+    location ~* \.(?:json|html?) {
         expires -1;
     }
     
