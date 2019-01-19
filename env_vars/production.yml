@@ -4,6 +4,7 @@
 setup_git_repo: yes
 git_branch: master
 server_user_password: "{{ vault_production_server_user_password }}"
+ansible_become_pass: "{{ vault_production_ansible_become_password }}"
 
 
 # Database settings.
