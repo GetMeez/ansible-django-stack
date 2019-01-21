@@ -98,11 +98,9 @@ server {
         alias   {{ nginx_web_dir }};
         expires 1y;
         add_header Cache-Control "public";
-    }
-    
-    location ~* \.(?:json|html?) {
-        alias   {{ nginx_web_dir }};
-        expires -1;
+        location ~* \.(?:json|html?) {
+            expires -1;
+        }
     }
     
     location /fonts/ {
