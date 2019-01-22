@@ -2,7 +2,7 @@
 
 # Git settings.
 setup_git_repo: yes
-git_branch: develop-new
+git_branch: develop
 server_user_password: "{{ vault_staging_server_user_password }}"
 ansible_become_pass: "{{ vault_staging_ansible_become_password }}"
 
