@@ -109,11 +109,6 @@ server {
         expires 1y;
         add_header Cache-Control "public";
     }
-    
-    # alias favicon.* to static
-    location ~ ^/favicon.(\w*)$ {
-        alias {{ nginx_web_dir }}favicon\.$1;
-    } 
 
     location / {
         if (-f {{ virtualenv_path }}/maintenance_on.html) {
