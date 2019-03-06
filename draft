@@ -1,0 +1,8 @@
+[all:vars]
+env=draft
+
+[dbservers]
+draft.getmeez.com
+
+[webservers]
+draft.getmeez.com nginx_use_letsencrypt=true
