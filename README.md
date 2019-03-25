@@ -17,6 +17,10 @@ The frontend code is located in the `/webapps/meez/web/` directory. To deploy th
 
 **TODO:** Need to clean the frontend `/webapps/meez/web` of unused files periodically.
 
+### Automatic deployment
+
+Note that the frontend and backends are autodeployed on the `draft`, `develop`, and `master` branches. These get automatically deployed to `draft.getmeez.com`, `staging.getmeez.com`, and `production.getmeez.com`, respectively. See the `.travis.yml` in the frontend and backend respos for automatic deployment configuration.
+
 ### Accessing the server
 
 Login to the server using the `meez` user. The server deployment uses [ssh-agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/) to pull the repo from github. An example local ssh config entry might look as follows (note the `ForwardAgent` directive):
