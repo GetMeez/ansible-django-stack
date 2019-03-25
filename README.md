@@ -13,7 +13,43 @@ The playbook will ask for sudo and vault passwords which can be found in the Get
 
 ### Frontend setup
 
-The frontend is located in the `/webapps/meez/web/` directory. To deploy the frontend (for now), simply scp the files to this directory and run `service nginx restart` as sudo user (`sudo -i` after ssh'ing to the machine).
+The frontend code is located in the `/webapps/meez/web/` directory. To deploy the frontend (for now), simply scp the files to this directory and run `service nginx restart` as sudo user (`sudo -i` after ssh'ing to the machine).
+
+**TODO:** Need to clean the frontend `/webapps/meez/web` of unused files periodically.
+
+### Accessing the server
+
+Login to the server using the `meez` user. The server deployment uses [ssh-agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/) to pull the repo from github. An example local ssh config entry might look as follows (note the `ForwardAgent` directive):
+
+```
+Host production.getmeez.com
+    User meez
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent Yes
+    IdentitiesOnly yes
+Host staging.getmeez.com
+    User meez
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent Yes
+    IdentitiesOnly yes
+Host draft.getmeez.com
+    User meez
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent Yes
+    IdentitiesOnly yes
+```
+
+The following commands will set up the virtual environment on the server:
+
+```
+cd /webapps/meez
+. bin/activate
+. bin/postactivate
+```
+
+The backend code is at `/webapps/meez/meez`.
+
+Logs for gunicorn and NGINX can be found in the `/webapps/meez` directory.
 
 ansible-django-stack
 ====================
