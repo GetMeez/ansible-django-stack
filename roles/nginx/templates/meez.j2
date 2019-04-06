@@ -110,6 +110,26 @@ server {
         add_header Cache-Control "public";
     }
 
+    # alias favicon.* to static
+    location ~ ^/favicon.(\w*)$ {
+        alias {{ nginx_web_dir }}favicon\.$1;
+    }
+
+    # alias apple-touch-icon.* to static
+    location ~ ^/apple-touch-icon.(\w*)$ {
+        alias {{ nginx_web_dir }}apple-touch-icon\.$1;
+    }
+    
+    # alias safari-pinned-tab.* to static
+    location ~ ^/safari-pinned-tab.(\w*)$ {
+        alias {{ nginx_web_dir }}safari-pinned-tab\.$1;
+    }
+    
+    # alias browserconfig.xml* to static
+    location ~ ^/browserconfig.xml$ {
+        alias {{ nginx_web_dir }}browserconfig\.xml;
+    }
+
     location / {
         if (-f {{ virtualenv_path }}/maintenance_on.html) {
             return 503;
